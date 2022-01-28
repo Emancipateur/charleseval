@@ -1,94 +1,16 @@
 import React from 'react';
-import {useEffect, useState} from 'react'
-import Nav from '../components/Nav';
+import img1 from '../../public/images/portrait-g172a76435_1280.jpg'
 
 const Galerie = () => {
-   const  [pictures, setPictures] = useState([])
-   const radios = ["Mariage", "Grossesse", "Bébé", "Famille", "Baptême", "Couple" ];
-   const [selectedRadio, setSelectedRadio] = useState('');
-   const [category, setCategory] = useState()
-
-        useEffect(() => {
-      fetch("https://localhost:8000/api/pictures", {
-      headers: {
-        'Accept': 'application/json'
-      }})
-        .then((res) => res.json())
-        .then((data) => setPictures(data));
-      
-    }, []);
-
-    console.log(pictures)
-
-
-    switch (selectedRadio){
-      case "Mariage" :
-        setSelectedRadio("/api/categories/1");
-        break;
-      case "Grossesse":
-        setSelectedRadio("/api/categories/2")
-        break;
-      case "Bébé" :
-        setSelectedRadio("/api/categories/3");
-        break;
-      case "Famille":
-        setSelectedRadio("/api/categories/4")
-        break;
-      case "Baptême" :
-        setSelectedRadio("/api/categories/5");
-        break;
-      case "Couple":
-        setSelectedRadio("/api/categories/6")
-        break;
-      
-    }
-
-  
-    return (
-        <div className='galerie'>
-          <Nav />
-            <div className="choiceCategory">
-            <ul>
-          {radios.map((radio) => {
-            return (
-              <li className="radioTheme" key={radio}>
-                <input
-                  type="radio"
-                  name="choiceCategory"
-                  value={radio}
-                  id={radio}
-       
-                  onChange={(e) => setSelectedRadio(e.target.value)}
-                />
-                <label className='labelChoice' htmlFor={radio}>{radio} </label>
-              </li>
-            );
-          })}
-        </ul>
-            </div>
-
-
-          <div className="galerieContent">
-      
-          {(!selectedRadio  == "") ? (
-      pictures.filter(picture => picture.category.includes(selectedRadio))
-      .map(picture => (
-
-          <img className='picGalerie' src={picture.url} alt={picture.title} />)
-          )) :
 
 
 
-        pictures.map( (picture) => { return (
-        
-        <img className='picGalerie' src={picture.url} alt={picture.title} />)
-})}
-     
-      
-        </div>
-              
-        </div>
-    );
+
+  return (
+    <div>
+      <img src={img1} alt="" />
+    </div>
+  );
 };
 
 export default Galerie;
