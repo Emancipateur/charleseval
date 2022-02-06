@@ -16,3 +16,8 @@ Identifiants :
 
 charles@test.com   
 test
+
+
+
+Charte & mockup :
+https://emancipateur.com/charte.pdf
