@@ -1,11 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
 import Galerie from './pages/Galerie';
-import Price from './pages/Price';
+
 import Contact from './pages/Contact';
 import { Route, Routes } from 'react-router';
 import { BrowserRouter} from 'react-router-dom';
 import Home from './pages/Home';
+import Prestation from './pages/Prestation';
 
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
      <Routes>
         <Route path='/' element={<Home />}/>
         <Route path='/galerie' element={<Galerie />}/>
-        <Route path='/prestation' element={<Price />}/>
+        <Route path='/prestation' element={<Prestation />}/>
         <Route path='/contact' element={<Contact />}/>
       </Routes>
  </BrowserRouter>
